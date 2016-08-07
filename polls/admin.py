@@ -1,5 +1,5 @@
 from django.contrib import admin
-from polls.models import Choice, Question
+from polls.models import Choice, Question#, UserProfile
 # Register your models here.
 
 class ChoiceInLine(admin.TabularInline):
@@ -17,3 +17,4 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 admin.site.register(Question, QuestionAdmin)
 #admin.site.register(Choice)
+#admin.site.register(UserProfile)

@@ -1,13 +1,21 @@
-{% load staticfiles%}
-<link rel = "stylesheet" type = type = "text/css" href = "{% static 'polls/style.css'  %}" />
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 {% if latest_question_list %}
-    <ul>
-        {% for question in latest_question_list %}
-            <li>
-                <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+<ul>
+    {% for question in latest_question_list %}
+    <li>
+    <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+    </li>
+    {% endfor %}
+</ul>
 {% else %}
-    <p>No polls are available.</p>
+<p>No polls are available.</p>
+{% endif %}
+<a href="/polls/register/">Register Here</a>
+<a href="/rango/login/">Login</a>
+{% if user.is_authenticated %}
+<h1>Rango says... hello {{ user.username }}!</h1>
+{% else %}
+<h1>Rango says... hello world!</h1>
 {% endif %}

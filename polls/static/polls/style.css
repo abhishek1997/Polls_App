@@ -1,9 +1,9 @@
 li a
 {
-    color : green;
+    color : black;
 }
 
 body 
 {
-    background : white url("images/background.gif") no-repeat right bottom);
+    background : url("images/background.gif") white no-repeat right bottom;
 }
