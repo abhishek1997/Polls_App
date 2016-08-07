@@ -1,9 +1,78 @@
-li a
+.page
 {
-    color : black;
+  overflow-x: hidden;
+}
+header
+{
+  background-color: #4169E1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100px;
+  min-width: 100%;
+}
+.headerr
+{
+  background-color: #00FFFF;
+  background: transparent;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 100px;
+  min-width: 100%;
+}
+.app_button
+{
+  position: relative;
+  top: 16%;
+  font-size: 300%;
+  color: white;
+  background-color: transparent;
+  border: transparent;
+}
+body
+{
+  background-color: #00FFFF;
+  position: relative;
+}
+.mid-section
+{
+  position: relative;
+  width: 100%;
+}
+footer
+{
+  background-color: #708090;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 50px;
+  min-width: 100%;
+}
+.cr
+{
+  position: relative;
+  bottom: 1%;
+  text-align: center;
 }
 
-body 
+li a
 {
-    background : url("images/background.gif") white no-repeat right bottom;
+  color : black;
+}
+.sec-head
+{
+
+}
+.txt
+{
+  position: relative;
+  left: 5%;
+}
+.body_but
+{
+  position: relative;
+  top: 20px;
+  margin: auto;
+  display: table;
 }

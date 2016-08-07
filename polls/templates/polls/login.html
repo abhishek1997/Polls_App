@@ -1,22 +1,25 @@
-!DOCTYPE html>
+{% load staticfiles %}
+{% include "polls/background.html" %}
+<!DOCTYPE html>
 <html>
-i
+
 <head>
-<!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
-<title>Rango</title>
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+    <title>POLLS</title>
 </head>
 
 <body>
-<h1>Login to Rango</h1>
+<h1>Login to POLLS</h1>
 
-<form id="login_form" method="post" action="/rango/login/">
-    {% csrf_token %}
+<form id="login_form" method="post" action="/polls/login/">
+{% csrf_token %}
     Username: <input type="text" name="username" value="" size="50" />
     <br />
     Password: <input type="password" name="password" value="" size="50" />
     <br />
 
-    <input type="submit" value="submit" />
+    <input type="submit" value="Submit" />
 </form>
 
 </body>

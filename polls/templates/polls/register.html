@@ -1,19 +1,23 @@
+{% load staticfiles %}
+{% include "polls/background.html" %}
 <!DOCTYPE html>
 <html>
 <head>
-<title>Rango</title>
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+    <title>Polls</title>
 </head>
 
 <body>
-<h1>Register with Rango</h1>
+<h1>Register with Polls</h1>
 
 {% if registered %}
 <strong>thank you for registering!</strong>
 <a href="/polls/">Return to the homepage.</a><br />
 {% else %}
-<strong>register here!</strong><br />
+<strong>Register here!</strong><br />
 
-<form id="user_form" method="post" action="/rango/register/" enctype="multipart/form-data">
+<form id="user_form" method="post" action="/polls/register/" enctype="multipart/form-data">
 
     {% csrf_token %}
 

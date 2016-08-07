@@ -1,21 +1,45 @@
 {% load staticfiles %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
-{% if latest_question_list %}
-<ul>
-    {% for question in latest_question_list %}
-    <li>
-    <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No polls are available.</p>
-{% endif %}
-<a href="/polls/register/">Register Here</a>
-<a href="/rango/login/">Login</a>
+{% include "polls/background.html" %}
+<head>
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+</head>
+<body>
+<div class="mid-section">
 {% if user.is_authenticated %}
-<h1>Rango says... hello {{ user.username }}!</h1>
+    <div class="sec-head">
+        <h1 class="txt">Hello {{ user.username }}!</h1>
+    </div>
+    <div>
+    {% if latest_question_list %}
+    <ul>
+        {% for question in latest_question_list %}
+        <li>
+            <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    </div>
+    <div>
+        <a href="/polls/logout/">
+            <button type="button" class="btn btn-primary">Logout</button>
+        </a>
+    </div>
 {% else %}
-<h1>Rango says... hello world!</h1>
+    <div>
+        <h1>Hello World!</h1>
+    </div>
+    <div>
+        <a href="/polls/register/">
+            <button type="button" class="btn btn-primary">Register Here</button>
+        </a>
+        <a href="/polls/login/">
+            <button type="button" class="btn btn-primary">Login</button>
+        </a>
+    </div>
 {% endif %}
+</div>
+</body>
